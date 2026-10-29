@@ -27,27 +27,20 @@ with open(
 
 print("Model artifacts loaded successfully")
 
-
-# @app.route("/")
-# def home():
-#     return "Country Aid API is running"
-
-# @app.route("/health")
-# def health():
-#     return "API is healthy"
-
-# @app.route("/echo",methods = ["POST"])
-# def echo():
-#     data = request.get_json()
-
-#     return jsonify({
-#         "received_data": data
-#     })
-
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "ok"
+    }), 200
 
 @app.route("/predict",methods=["POST"])
 def predict():
     data = request.get_json()
+
+    if not isinstance(data, dict):
+        return jsonify({
+            "error": "Request body must be a valid JSON object"
+        }), 400
 
     missing_features = [
     feature for feature in MODEL_FEATURES

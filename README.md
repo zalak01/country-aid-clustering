@@ -8,13 +8,21 @@ HELP International has approximately $10 million available for international aid
 
 The objective of this project is to group countries with similar development profiles using unsupervised machine learning and identify the clusters representing higher levels of vulnerability. These insights can then support, rather than replace, humanitarian and policy judgment when prioritising aid.
 
+## Key Results
+
+- The final solution uses **K-Means with 3 clusters** to separate countries into different vulnerability profiles.
+- The **high-vulnerability cluster contains 51 countries** requiring the strongest further humanitarian review.
+- Hierarchical clustering identified a **42-country core high-need group**, fully contained within the K-Means high-vulnerability cluster, providing additional validation of the prioritisation pattern.
+- The highest-priority countries identified in the final ranking include **Haiti, Central African Republic, Sierra Leone, Chad, and Niger**.
+- The model is intended to support aid prioritisation, not replace humanitarian or policy judgment.
+
 ## Dataset
 
-The dataset contains information for **167 countries** across economic, health, demographic, and trade-related indicators.
+The dataset used in this project was provided as part of the Scaler Data Science program. It contains socioeconomic, health, demographic, and trade indicators for 167 countries and corresponds to the publicly available **“Unsupervised Learning on Country Data”** dataset associated with the HELP International aid-allocation case study.
 
-`country` is used only as an identifier and is excluded from the clustering model.
+A public version of the same dataset is available on Kaggle: **Unsupervised Learning on Country Data**.
 
-### Features Used
+### Dtaset Features 
 
 | Feature | Description |
 |---|---|
@@ -174,7 +182,7 @@ During inference, the API follows the same preprocessing and scaling steps used 
 
 - **Python** — data analysis, preprocessing, modelling, and API logic
 - **Pandas / NumPy** — data manipulation and numerical processing
-- **SciPy / Statsmodels** — statistical analysis and transformations
+- **SciPy** — statistical analysis and transformations
 - **Scikit-learn** — scaling and K-Means clustering
 - **Matplotlib / Seaborn** — exploratory visualisation
 - **Tableau** — interactive analytical dashboards
