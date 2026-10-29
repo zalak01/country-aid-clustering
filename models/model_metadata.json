@@ -1,0 +1,30 @@
+{
+    "model_type": "KMeans",
+    "n_clusters": 3,
+    "model_features": [
+        "child_mort",
+        "exports",
+        "health",
+        "imports",
+        "inflation",
+        "life_expec",
+        "total_fer",
+        "gdpp"
+    ],
+    "inflation_yeojohnson_lambda": 0.4278346215723399,
+    "transformations": {
+        "child_mort": "log1p",
+        "exports": "sqrt",
+        "health": "none",
+        "imports": "sqrt",
+        "inflation": "yeo-johnson",
+        "life_expec": "none",
+        "total_fer": "none",
+        "gdpp": "log1p"
+    },
+    "cluster_mapping": {
+        "0": "Intermediate Vulnerability",
+        "1": "High Vulnerability",
+        "2": "Lower Vulnerability"
+    }
+}
